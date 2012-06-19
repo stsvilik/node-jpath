@@ -47,41 +47,45 @@ Output:
 
 Supported Operators
 ---
-"==" or "=" - compares data member for equality
-
-"!=" - compares data member inequality
-
-"<" - less than
-
-">" - greater than
-
-"<=" - less or equal
-
-">=" - greater or equal
-
-"~=" - equal ignoring case
-
-"^=" - starts with
-
-"$=" - ends with
-
-"*=" - contains a string anywhere inside
-
-"!*" - does NOT contain a string anywhere in the value
-
-"?" - allows you to pass a custom evaluation function
+* "==" or "=" - compares data member for equality
+* "!=" - compares data member inequality
+* "<" - less than
+* ">" - greater than
+* "<=" - less or equal
+* ">=" - greater or equal
+* "~=" - equal ignoring case
+* "^=" - starts with
+* "$=" - ends with
+* "*=" - contains a string anywhere inside
+* "!*" - does NOT contain a string anywhere in the value
+* "?" - allows you to pass a custom evaluation function
 
 You can also reverse condition for any of the operations by wrapping them in "!(...)". 
 
-Example:
+## Example:
 	var match = jpath.filter(jsonData, "people[!(name ^= A)]"); //This will find all names that do NOT start with "A"
+
+Working with Arrays
+---
+Working with Arrays requires a special character to reference Array itself in the expression, for this we'll use "\*".
+## Example:
+	var people = [
+		{name: "John", age:26, gender:"male"},
+		{name: "Steve", age:24, gender:"male"},
+		{name: "Susan", age:22, gender:"female"},
+		{name: "Linda", age:30, gender:"female"},
+		{name: "Adam", age:32, gender:"male"}
+	];
+	var match = jpath.filter(people, "*[gender==female]");
+Output:
+	[{name: "Susan", age:22, gender:"female"},{name: "Linda", age:30, gender:"female"}]
 
 API
 ---
 jPath exposes two methods: filter() and select(). select method returns an instance of JPath object that allows you to do alot more then just get results of the pattern match.
 
-Classes
----
+### Classes
+
 * JPath
 	* constructor( json ) - initializes JPath instance
 	* data - local copy of json object you passed in during init.
@@ -94,8 +98,8 @@ Classes
 	* and( pattern ) - this method allows combining of multiple search results.
 	* val() - <Array> returns the final value of selection
 
-Methods
----
+### Methods
+
 select( json, expression ) - performs a traversal and returns you an instance of JPath object
 
 filter( json, expression ) - performs a traversal and returns a value
