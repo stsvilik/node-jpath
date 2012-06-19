@@ -62,13 +62,13 @@ Supported Operators
 
 You can also reverse condition for any of the operations by wrapping them in "!(...)". 
 
-## Example:
+#### Example:
 	var match = jpath.filter(jsonData, "people[!(name ^= A)]"); //This will find all names that do NOT start with "A"
 
 Working with Arrays
 ---
 Working with Arrays requires a special character to reference Array itself in the expression, for this we'll use "\*".
-## Example:
+#### Example:
 	var people = [
 		{name: "John", age:26, gender:"male"},
 		{name: "Steve", age:24, gender:"male"},
@@ -96,11 +96,10 @@ jPath exposes two methods: filter() and select(). select method returns an insta
 	* eq( index ) - returns result value by index
 	* select( pattern [, custom_compare_function ]) - performs recursive search
 	* and( pattern ) - this method allows combining of multiple search results.
-	* val() - <Array> returns the final value of selection
+	* val() - {Array} returns the final value of selection
 
 ### Methods
 
-select( json, expression ) - performs a traversal and returns you an instance of JPath object
-
-filter( json, expression ) - performs a traversal and returns a value
+* select( json, expression ) - performs a traversal and returns you an instance of JPath object
+* filter( json, expression ) - performs a traversal and returns a value
 
