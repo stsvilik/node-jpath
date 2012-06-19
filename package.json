@@ -17,6 +17,6 @@
 		"type": "MIT",
 		"url": "https://github.com/stsvilik/node-jpath/blob/master/LICENSE-MIT"
 	}],
-	"main": "lib/node-jpath",
+	"main": "./lib/node-jpath",
 	"keywords": ["utility", "xpath", "jpath", "traversal", "objects"]
 }

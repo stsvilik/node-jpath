@@ -10,7 +10,7 @@ and that is why the pattern syntax uses dots(.) instead of slashes. One thing th
 
 How does it work?
 ---
-jPath is a recursive scanner that processes each token of your pattern at a time passing the results of the findings back to itself. As it runs conditions to match the values, it tries to match value types on the left and right sides of the equasion (aples to aples, oranges to oranges). Results of the traversal are merged into a single Array.
+jPath is a recursive scanner that processes each token of your pattern at a time passing the results of the findings back to itself. As it runs conditions to match the values, it tries to match value types on the left and right sides of the equasion (apples to apples, oranges to oranges). Results of the traversal are merged into a single Array.
 
 Examples
 ---
