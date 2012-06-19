@@ -48,16 +48,27 @@ Output:
 Supported Operators
 ---
 "==" or "=" - compares data member for equality
+
 "!=" - compares data member inequality
+
 "<" - less than
+
 ">" - greater than
+
 "<=" - less or equal
+
 ">=" - greater or equal
+
 "~=" - equal ignoring case
+
 "^=" - starts with
+
 "$=" - ends with
+
 "*=" - contains a string anywhere inside
+
 "!*" - does NOT contain a string anywhere in the value
+
 "?" - allows you to pass a custom evaluation function
 
 You can also reverse condition for any of the operations by wrapping them in "!(...)". 
@@ -72,19 +83,20 @@ jPath exposes two methods: filter() and select(). select method returns an insta
 Classes
 ---
 * JPath
-** constructor( json ) - initializes JPath instance
-** data - local copy of json object you passed in during init.
-** selection - cached result of the selection
-** from( json ) - this method allows you to change json source
-** first() - returns the first result value
-** last() - returns the last result value
-** eq( index ) - returns result value by index
-** select( pattern [, custom_compare_function ]) - performs recursive search
-** and( pattern ) - this method allows combining of multiple search results.
-** val() - <Array> returns the final value of selection
+	* constructor( json ) - initializes JPath instance
+	* data - local copy of json object you passed in during init.
+	* selection - cached result of the selection
+	* from( json ) - this method allows you to change json source
+	* first() - returns the first result value
+	* last() - returns the last result value
+	* eq( index ) - returns result value by index
+	* select( pattern [, custom_compare_function ]) - performs recursive search
+	* and( pattern ) - this method allows combining of multiple search results.
+	* val() - <Array> returns the final value of selection
 
 Methods
 ---
 select( json, expression ) - performs a traversal and returns you an instance of JPath object
+
 filter( json, expression ) - performs a traversal and returns a value
 
