@@ -46,7 +46,7 @@ jPath is a recursive scanner that processes each token of your pattern at a time
 	["John", "Steve", "Susan", "Linda", "Adam"]
 
 	//I need to get people that have gender (in our case all of them will, but in case field is missing this operation is useful)
-	var match = jpath.filter(jsonData, "people[name != undefined]");
+	var match = jpath.filter(jsonData, "people[gender != undefined]");
 
 
 #### Does it support conditions?
