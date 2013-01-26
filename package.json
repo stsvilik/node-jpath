@@ -1,7 +1,7 @@
 {
 	"name": "node-jpath",
 	"description": "jPath: Traversal utility to help you digg deeper into complex objects or arrays of objects",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"author": {
 		"name": "Simon Tsvilik",
 		"email": "webdevsimon@gmail.com"
