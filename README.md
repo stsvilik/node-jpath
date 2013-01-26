@@ -30,19 +30,19 @@ jPath is a recursive scanner that processes each token of your pattern at a time
 	//We want to get all males younger then 25
 	var match = jpath.filter(jsonData, "people[gender=male && age < 25]");
 
-Output:
+	Output:
 	[{name: "Steve", age:24, gender:"male"}]
 
 	//Now lets try to get people that have a 5 letter name
 	var match = jpath.filter(jsonData, "people[name.length == 5]");
 
-Output:
+	Output:
 	[{name: "Steve", age:24, gender:"male"},{name: "Susan", age:22, gender:"female"},{name: "Linda", age:30, gender:"female"}]
 
 	//I want to get only names of people as an array of strings
 	var match = jpath.filter(jsonData, "people.name");
 
-Output:
+	Output:
 	["John", "Steve", "Susan", "Linda", "Adam"]
 
 	//I need to get people that have gender (in our case all of them will, but in case field is missing this operation is useful)
@@ -105,7 +105,7 @@ Working with Arrays requires a special character to reference Array itself in th
 		{name: "Adam", age:32, gender:"male"}
 	];
 	var match = jpath.filter(people, "*[gender==female]");
-Output:
+	Output:
 	[{name: "Susan", age:22, gender:"female"},{name: "Linda", age:30, gender:"female"}]
 
 API
@@ -145,7 +145,7 @@ jPath exposes two methods: filter() and select(). select method returns an insta
 
         jPath.select( JSON, "foo[bar == 1]").and( "foo2[bar == 2]").val(); //This example adds to the selection a different pattern evaluation
 
-    //Example above could also be written like so:
+    Example above could also be written like so:
 
         jPath.select( JSON, "foo[bar == 1 || bar == 2]").val();
 
